@@ -1,0 +1,18 @@
+<div class="email-form">
+  <h2>E-posta Gönder</h2>
+  <form [formGroup]="emailForm" (ngSubmit)="sendEmail()">
+    <div class="form-group">
+      <label for="to">Alıcı E-posta Adresi:</label>
+      <input type="email" id="to" formControlName="to" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="subject">Konu:</label>
+      <input type="text" id="subject" formControlName="subject" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="body">İçerik:</label>
+      <textarea id="body" formControlName="body" class="form-control"></textarea>
+    </div>
+    <button type="submit" [disabled]="!emailForm.valid" class="btn btn-primary">Gönder</button>
+  </form>
+</div>
